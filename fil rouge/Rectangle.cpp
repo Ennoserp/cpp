@@ -1,14 +1,15 @@
-#include <iostream>
 #include "Rectangle.hpp"
 
-Rectangle::Rectangle();
+Rectangle::Rectangle()
+{
+}
 Rectangle::Rectangle(int x0,int y0,int w0,int h0){
     x = x0;
     y = y0;
     w = w0;
     h = h0;
 }
-Rectangle::Rectangle(int x0,int y0,int x1,int y1){
+Rectangle::Rectangle(int contructeur,int x0,int y0,int x1,int y1){
     x = x0;
     y = y0;
     w = x1 - x0;
