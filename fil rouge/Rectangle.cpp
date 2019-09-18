@@ -2,6 +2,7 @@
 
 Rectangle::Rectangle()
 {
+    x=y=w=h=0;
 }
 Rectangle::Rectangle(int x0,int y0,int w0,int h0){
     x = x0;
