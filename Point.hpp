@@ -3,13 +3,17 @@
 
 class Point{
     
+    
     private:
         int x;
         int y;
         int z;
+        static int compteur;
 
     public:
         Point();
+        Point(int);
+        ~Point();
 
         void setX(int);
         void setY(int);
@@ -21,6 +25,8 @@ class Point{
 
         void deplacerDe(int,int,int);
         void deplacerVers(int,int,int);
+
+        static int getCompteur();
 };
 
 #endif

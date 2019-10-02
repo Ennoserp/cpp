@@ -1,6 +1,8 @@
 #ifndef RECTANGLE
 #define RECTANGLE
 
+#include <iostream>
+
 class Rectangle{
     private:
 
@@ -8,12 +10,14 @@ class Rectangle{
         int y;//ordonnée origine
         int w;//width
         int h;//height
+        int ordre;
 
     public:
 
         Rectangle();
         Rectangle(int,int,int,int);
         Rectangle(int,int,int,int,int);
+        ~Rectangle();
 
         void setX(int);
         int getX();
@@ -27,8 +31,10 @@ class Rectangle{
         void setH(int);
         int getH();
 
+        void setOrdre(int);
 
-        
+        std::string toString();
+
 };
 
 
