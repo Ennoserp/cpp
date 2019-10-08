@@ -52,6 +52,10 @@ void Rectangle::setOrdre(int ord){
     ordre = ord;
 }
 
+int Rectangle::getOrdre(){
+    return ordre;
+}
+
 std::string Rectangle::toString(){
     std::ostringstream str;
     str << "RECTANGLE " << x << " " << y << " " << w << " " << h; 

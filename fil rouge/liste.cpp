@@ -17,14 +17,32 @@ int Liste::getCompteur(){
 
 std::string Liste::toString(){
     std::ostringstream ss;
-    ss << "compteur" << compteur << ", nb cercle :" << nb_c << "nb rectangle : " << nb_r << std::endl;
+    ss << "compteur " << compteur << ", nb cercle :" << nb_c << ", nb rectangle : " << nb_r << std::endl;
     ss << "[";
+    int indiceCercle = 0;
+    int indiceRectangle = 0;
+    std::cout << "rect " << ListRect[0].getOrdre() << std::endl;
+    std::cout << "cercle " << ListCercle[1].getOrdre() << std::endl;
+    for (int i=0; i<compteur ; ++i){
+            
+            if (ListRect[indiceRectangle].getOrdre() == i){
+                //afficher rectangle
+                ss << "R" << indiceRectangle << " : " << ListRect[indiceRectangle].toString() << " ";
+                indiceRectangle++;
+            }
+            else {
+                //Afficher cercle
+                ss << "C" << indiceCercle << " : " << ListCercle[indiceCercle].toString() << " ";
+                indiceCercle++;
+            }
+    }
+    /*
     for (int i = 0; i<nb_r;++i){
         ss << "R" << i << " : " << ListRect[i].toString() << " ";
     }
     for (int i = 0; i<nb_c;++i){
         ss << "C" << i << " : " << ListCercle[i].toString() << " ";
-    }
+    }*/
     ss << "]";
     return ss.str();
 }

@@ -33,6 +33,7 @@ class Cercle{
         int getH();
 
         void setOrdre(int);
+        int getOrdre();
 
         std::string toString();
 

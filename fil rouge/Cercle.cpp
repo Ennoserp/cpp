@@ -55,6 +55,10 @@ void Cercle::setOrdre(int ord){
     ordre = ord;
 }
 
+int Cercle::getOrdre(){
+    return ordre;
+}
+
 std::string Cercle::toString(){
     std::ostringstream str;
     str << "CERCLE " << x << " " << y << " " << w << " " << h; 

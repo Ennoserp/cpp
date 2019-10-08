@@ -1,5 +1,7 @@
 #include "Point.hpp"
+#include <iostream>
 #include <math.h>
+
 
 Point::Point(){
     std::cout << "Contructeur par défaut" << std::endl;

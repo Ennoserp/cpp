@@ -12,7 +12,7 @@ class Point{
 
     public:
         Point();
-        Point(int);
+        Point(int,int);
         ~Point();
 
         void setX(int);
