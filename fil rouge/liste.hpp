@@ -19,6 +19,7 @@ class Liste{
 
         Liste();
         ~Liste();
+        
         int getCompteur();
         std::string toString();
         
