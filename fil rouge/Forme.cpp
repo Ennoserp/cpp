@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Forme.hpp"
 
 
@@ -35,4 +34,18 @@ int Forme::getH(){
 
 int Forme::getNbFormes(){
     return nbFormes;
+}
+
+int Forme::prochainId(){
+    return nbFormes + 1;
+}
+
+int Forme::getId(){
+    return id;
+}
+
+std::string Forme::toString(){
+    std::ostringstream str;
+    str << "Forme " << point.getX() << " " << point.getY() << " " << w << " " << h; 
+    return str.str();
 }

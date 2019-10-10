@@ -1,7 +1,6 @@
 #ifndef POINT
 #define POINT
 
-#include <iostream>
 
 class Point{
     private:
@@ -21,5 +20,6 @@ class Point{
 
 };
 
+const Point ORIGINE(0,0);
 
 #endif

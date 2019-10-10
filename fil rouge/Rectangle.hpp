@@ -1,16 +1,10 @@
 #ifndef RECTANGLE
 #define RECTANGLE
 
-#include <iostream>
+#include "Forme.hpp"
 
-class Rectangle{
+class Rectangle : public Forme{
     private:
-
-        int x;//abscisse origine
-        int y;//ordonnée origine
-        int w;//width
-        int h;//height
-        int ordre;
 
     public:
 
@@ -18,23 +12,6 @@ class Rectangle{
         Rectangle(int,int,int,int);
         Rectangle(int,int,int,int,int);
         ~Rectangle();
-
-        void setX(int);
-        int getX();
-
-        void setY(int);
-        int getY();
-
-        void setW(int);
-        int getW();
-
-        void setH(int);
-        int getH();
-
-        void setOrdre(int);
-        int getOrdre();
-
-        std::string toString();
 
 };
 

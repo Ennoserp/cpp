@@ -2,7 +2,7 @@
 #include "Liste.hpp"
 #include "Rectangle.hpp"
 #include "Cercle.hpp"
-
+/*
 Liste::Liste(){
     std::cout << "liste" << std::endl;
     nb_c = 0;
@@ -36,13 +36,7 @@ std::string Liste::toString(){
                 indiceCercle++;
             }
     }
-    /*
-    for (int i = 0; i<nb_r;++i){
-        ss << "R" << i << " : " << ListRect[i].toString() << " ";
-    }
-    for (int i = 0; i<nb_c;++i){
-        ss << "C" << i << " : " << ListCercle[i].toString() << " ";
-    }*/
+    
     ss << "]";
     return ss.str();
 }
@@ -59,4 +53,5 @@ void Liste::ajouterRectangle(Rectangle r){
     ListRect[nb_r] = r;    
     nb_r++;
     compteur++;
-}
+}*/
+
