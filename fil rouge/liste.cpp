@@ -1,57 +1,57 @@
-#include <sstream>
 #include "Liste.hpp"
-#include "Rectangle.hpp"
-#include "Cercle.hpp"
-/*
-Liste::Liste(){
-    std::cout << "liste" << std::endl;
-    nb_c = 0;
-    nb_r = 0;
-    compteur = 0;
-}
-Liste::~Liste(){}
 
-int Liste::getCompteur(){
+Groupe::Groupe() : compteur(0) {}
+
+int Groupe::getCompteur()
+{
     return compteur;
 }
 
-std::string Liste::toString(){
-    std::ostringstream ss;
-    ss << "compteur " << compteur << ", nb cercle :" << nb_c << ", nb rectangle : " << nb_r << std::endl;
-    ss << "[";
-    int indiceCercle = 0;
-    int indiceRectangle = 0;
-    std::cout << "rect " << ListRect[0].getOrdre() << std::endl;
-    std::cout << "cercle " << ListCercle[1].getOrdre() << std::endl;
-    for (int i=0; i<compteur ; ++i){
-            
-            if (ListRect[indiceRectangle].getOrdre() == i){
-                //afficher rectangle
-                ss << "R" << indiceRectangle << " : " << ListRect[indiceRectangle].toString() << " ";
-                indiceRectangle++;
-            }
-            else {
-                //Afficher cercle
-                ss << "C" << indiceCercle << " : " << ListCercle[indiceCercle].toString() << " ";
-                indiceCercle++;
-            }
+std::string Groupe::toString()
+{
+    std::ostringstream res;
+    res << "[ ";
+    for (int i = 0; i < compteur; ++i)
+    {
+        res << "{" << (formes[i])->toString() << "} ";
     }
-    
-    ss << "]";
-    return ss.str();
+    res << "]";
+    return res.str();
 }
 
-void Liste::ajouterCercle(Cercle c){
-    c.setOrdre(nb_c);
-    ListCercle[nb_c] = c;
-    nb_c++;
-    compteur++;
+
+void Groupe::addForme(Forme* f){
+
+    f->setOrdre(compteur);
+    formes[compteur++] = f;
+    if (compteur==1)
+    {
+        boite.setPoint(formes[0]->getOrigin());
+        boite.setH(formes[0]->getH());
+        boite.setW(formes[0]->getW());
+    }
+    else
+    {
+    
+        if (boite.getOrigin().getX()> f->getOrigin().getX())
+        {
+            boite.getOrigin().setX(f->getOrigin().getX());
+        }
+
+        if (boite.getOrigin().getY()> f->getOrigin().getY())
+        {
+            boite.getOrigin().setY(f->getOrigin().getY());
+        }
+
+        if (boite.getH() + boite.getOrigin().getY() < f->getH() + f->getOrigin().getY())
+        {
+            boite.setH(f->getH() + f->getOrigin().getY() - boite.getOrigin().getY());
+        }
+
+        if (boite.getW() + boite.getOrigin().getY() < f->getW() + f->getOrigin().getX())
+        {
+            boite.setW(f->getW() + f->getOrigin().getX() - boite.getOrigin().getX());
+        }
     }
 
-void Liste::ajouterRectangle(Rectangle r){
-    r.setOrdre(nb_r);
-    ListRect[nb_r] = r;    
-    nb_r++;
-    compteur++;
-}*/
-
+}

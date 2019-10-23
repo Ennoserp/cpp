@@ -1,31 +1,29 @@
-#ifndef LISTE
-#define LISTE
+#ifndef GROUPE
+#define GROUPE
 
-#include <iostream>
 #include "Rectangle.hpp"
-#include "Cercle.hpp"
+#include <sstream>
+#include <iterator>
+#include "Forme.hpp"
 
-const int taille = 10;
 
-class Liste{
-    
+const int SIZE = 10;
+
+class Groupe : public Forme {
+
+    private:
+        
+        int compteur;
+        Forme *formes[SIZE];
+        Forme boite;
+
     public:
 
-        Rectangle ListRect[taille];
-        Cercle ListCercle[taille];
-        int nb_r;
-        int nb_c;
-        int compteur;
-
-        Liste();
-        ~Liste();
-        
+        Groupe();
+        ~Groupe();
         int getCompteur();
-        std::string toString();
-        
-        void ajouterCercle(Cercle);
-        void ajouterRectangle(Rectangle);
+        void addForme(Forme*);
+        virtual std::string toString();
 };
-
 
 #endif
